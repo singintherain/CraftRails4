@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id:   1
+  body: 'Body'
+  path: 'some/path'
+  format: 'html'
+  locale: 'en'
+  handler: 'erb'
+  partial: false
+
+users_index:
+  id: 2
+  path: 'users/index'
+  format: 'html'
+  locale: 'en'
+  handler: 'erb'
+  partial: false
+  body: "<h1>Listing users</h1>"
+
