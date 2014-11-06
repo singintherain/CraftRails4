@@ -24,7 +24,6 @@ class SqlTemplatesController < ApplicationController
   # POST /sql_templates
   # POST /sql_templates.json
   def create
-    debugger
     @sql_template = SqlTemplate.new(sql_template_params)
 
     respond_to do |format|
