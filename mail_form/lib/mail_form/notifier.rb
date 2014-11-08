@@ -1,4 +1,4 @@
-module MailForm  
+module MailForm
   class Notifier < ActionMailer::Base
     append_view_path File.expand_path('../../views', __FILE__)
 
