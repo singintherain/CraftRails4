@@ -4,6 +4,13 @@ class SqlTemplatesController < ApplicationController
   # GET /sql_templates
   # GET /sql_templates.json
   def index
+    session[:name] = 'lvsong'
+
+    cookies[:lvsong] = {
+      value: 'lvsong'
+      #expires: 2.day.from_now
+      #domain: 'domain.com'
+    }
     @sql_templates = SqlTemplate.all
   end
 
