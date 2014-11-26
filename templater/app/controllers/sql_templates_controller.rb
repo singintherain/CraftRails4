@@ -11,6 +11,15 @@ class SqlTemplatesController < ApplicationController
       #expires: 2.day.from_now
       #domain: 'domain.com'
     }
+    #cookies[:user_name] = 'lvsong'
+    #cookies.signed[:user_name] = 'lvsong_artist'
+    #cookies.encrypted[:user_name] = 'lvsong_artist'
+    @room = Room.new
+    @room.save
+
+    @room.pictures.create
+    @room.pictures.create
+
     @sql_templates = SqlTemplate.all
   end
 
