@@ -4,6 +4,17 @@ class SqlTemplatesController < ApplicationController
   # GET /sql_templates
   # GET /sql_templates.json
   def index
+    #cookies[:user_name] = 'lvsong'
+    #cookies.signed[:user_name] = 'lvsong_artist'
+    #cookies.encrypted[:user_name] = 'lvsong_artist'
+    @room = Room.new
+    @room.save
+
+    @room.pictures.create
+    @room.pictures.create
+
+    puts @room.pictures
+
     @sql_templates = SqlTemplate.all
   end
 
