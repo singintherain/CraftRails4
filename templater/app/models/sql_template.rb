@@ -1,3 +1,5 @@
+require 'singleton'
+
 class SqlTemplate < ActiveRecord::Base
   validates :body, :path, presence: true
   validates :format, inclusion: Mime::SET.symbols.map(&:to_s)
@@ -5,7 +7,13 @@ class SqlTemplate < ActiveRecord::Base
   validates :handler, inclusion:
     ActionView::Template::Handlers.extensions.map(&:to_s)
 
+  after_save do
+    SqlTemplate::Resolver.instance.clear_cache
+  end
+
   class Resolver < ActionView::Resolver
+    include Singleton
+
     protected
 
     def find_templates(name, prefix, partial, details)
@@ -54,3 +62,4 @@ class SqlTemplate < ActiveRecord::Base
     end
   end
 end
+
