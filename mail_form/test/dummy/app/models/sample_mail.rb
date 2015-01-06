@@ -15,6 +15,6 @@ class SampleMail < MailForm::Base
   end
 
   def evaluated_callbacks
-    @evaluated_callbacks || []
+    @evaluated_callbacks ||= []
   end
 end
